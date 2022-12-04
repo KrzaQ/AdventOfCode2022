@@ -19,6 +19,16 @@
             }
         ]
     },
+    "day03": {
+        "desc": "Rucksack Reorganization",
+        "path": "solutions/day03",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby", "C++"
     ]
