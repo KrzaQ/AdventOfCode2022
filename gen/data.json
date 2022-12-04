@@ -1,0 +1,15 @@
+{
+    "day01": {
+        "desc": "Calorie Counting",
+        "path": "solutions/day01",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
+    "ordering": [
+        "Ruby", "C++"
+    ]
+}
