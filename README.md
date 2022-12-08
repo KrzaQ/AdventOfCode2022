@@ -12,6 +12,7 @@ I'm using various languages to provide solutions.
 | 05 | [Supply Stacks][day05] | [:heavy_check_mark:](solutions/day05/main.rb) |  |
 | 06 | [Tuning Trouble][day06] | [:heavy_check_mark:](solutions/day06/main.rb) |  |
 | 07 | [No Space Left On Device][day07] | [:heavy_check_mark:](solutions/day07/main.rb) |  |
+| 08 | [Treetop Tree House][day08] | [:heavy_check_mark:](solutions/day08/main.rb) |  |
 
 [day01]: https://adventofcode.com/2021/day/1
 [day02]: https://adventofcode.com/2021/day/2
@@ -20,7 +21,8 @@ I'm using various languages to provide solutions.
 [day05]: https://adventofcode.com/2021/day/5
 [day06]: https://adventofcode.com/2021/day/6
 [day07]: https://adventofcode.com/2021/day/7
+[day08]: https://adventofcode.com/2021/day/8
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-07 07:02:34 +0100
+Readme generated on 2022-12-08 06:42:27 +0100
