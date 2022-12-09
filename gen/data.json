@@ -79,6 +79,16 @@
             }
         ]
     },
+    "day09": {
+        "desc": "Rope Bridge",
+        "path": "solutions/day09",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby", "C++"
     ]
