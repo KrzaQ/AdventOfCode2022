@@ -23,29 +23,7 @@ def dist a, b
 end
 
 def new_diff a, b
-    dx, dy = a.zip(b).map{ _1.first - _1.last }
-    case dx.abs + dy.abs
-    when 0
-        [0, 0]
-    when 1
-        [0, 0]
-    when 2
-        if dx.abs == 1
-            [0, 0]
-        else
-            [dx, dy].map{ _1 / 2 }
-        end
-    when 3
-        if dx.abs == 2
-            [dx / 2, 0]
-        else
-            [0, dy / 2]
-        end
-    when 4
-        [dx / 2, dy / 2]
-    else
-        raise 'wtf'
-    end
+    a.zip(b).map{ _1.inject(:-) }.map{ _1.abs / 2 * (_1 <=> 0) }
 end
 
 def sim_step knots, diff
