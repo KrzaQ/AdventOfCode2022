@@ -14,6 +14,7 @@ I'm using various languages to provide solutions.
 | 07 | [No Space Left On Device][day07] | [:heavy_check_mark:](solutions/day07/main.rb) |  |
 | 08 | [Treetop Tree House][day08] | [:heavy_check_mark:](solutions/day08/main.rb) |  |
 | 09 | [Rope Bridge][day09] | [:heavy_check_mark:](solutions/day09/main.rb) |  |
+| 10 | [Cathode-Ray Tube][day10] | [:heavy_check_mark:](solutions/day10/main.rb) |  |
 
 [day01]: https://adventofcode.com/2021/day/1
 [day02]: https://adventofcode.com/2021/day/2
@@ -24,7 +25,8 @@ I'm using various languages to provide solutions.
 [day07]: https://adventofcode.com/2021/day/7
 [day08]: https://adventofcode.com/2021/day/8
 [day09]: https://adventofcode.com/2021/day/9
+[day10]: https://adventofcode.com/2021/day/10
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-09 06:42:18 +0100
+Readme generated on 2022-12-10 06:19:11 +0100
