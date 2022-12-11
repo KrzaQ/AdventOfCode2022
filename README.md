@@ -17,18 +17,18 @@ I'm using various languages to provide solutions.
 | 10 | [Cathode-Ray Tube][day10] | [:heavy_check_mark:](solutions/day10/main.rb) |  |
 | 11 | [Monkey in the Middle][day11] | [:heavy_check_mark:](solutions/day11/main.rb) |  |
 
-[day01]: https://adventofcode.com/2021/day/1
-[day02]: https://adventofcode.com/2021/day/2
-[day03]: https://adventofcode.com/2021/day/3
-[day04]: https://adventofcode.com/2021/day/4
-[day05]: https://adventofcode.com/2021/day/5
-[day06]: https://adventofcode.com/2021/day/6
-[day07]: https://adventofcode.com/2021/day/7
-[day08]: https://adventofcode.com/2021/day/8
-[day09]: https://adventofcode.com/2021/day/9
-[day10]: https://adventofcode.com/2021/day/10
-[day11]: https://adventofcode.com/2021/day/11
+[day01]: https://adventofcode.com/2022/day/1
+[day02]: https://adventofcode.com/2022/day/2
+[day03]: https://adventofcode.com/2022/day/3
+[day04]: https://adventofcode.com/2022/day/4
+[day05]: https://adventofcode.com/2022/day/5
+[day06]: https://adventofcode.com/2022/day/6
+[day07]: https://adventofcode.com/2022/day/7
+[day08]: https://adventofcode.com/2022/day/8
+[day09]: https://adventofcode.com/2022/day/9
+[day10]: https://adventofcode.com/2022/day/10
+[day11]: https://adventofcode.com/2022/day/11
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-11 06:38:09 +0100
+Readme generated on 2022-12-11 08:25:01 +0100
