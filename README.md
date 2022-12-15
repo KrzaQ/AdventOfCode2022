@@ -19,6 +19,7 @@ I'm using various languages to provide solutions.
 | 12 | [Hill Climbing Algorithm][day12] | [:heavy_check_mark:](solutions/day12/main.rb) |  |
 | 13 | [Distress Signal][day13] | [:heavy_check_mark:](solutions/day13/main.rb) |  |
 | 14 | [Regolith Reservoir][day14] | [:heavy_check_mark:](solutions/day14/main.rb) |  |
+| 15 | [Beacon Exclusion Zone][day15] | [:heavy_check_mark:](solutions/day15/main.rb) |  |
 
 [day01]: https://adventofcode.com/2022/day/1
 [day02]: https://adventofcode.com/2022/day/2
@@ -34,7 +35,8 @@ I'm using various languages to provide solutions.
 [day12]: https://adventofcode.com/2022/day/12
 [day13]: https://adventofcode.com/2022/day/13
 [day14]: https://adventofcode.com/2022/day/14
+[day15]: https://adventofcode.com/2022/day/15
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-15 05:39:46 +0100
+Readme generated on 2022-12-15 07:27:18 +0100
