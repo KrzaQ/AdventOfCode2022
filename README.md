@@ -18,6 +18,7 @@ I'm using various languages to provide solutions.
 | 11 | [Monkey in the Middle][day11] | [:heavy_check_mark:](solutions/day11/main.rb) |  |
 | 12 | [Hill Climbing Algorithm][day12] | [:heavy_check_mark:](solutions/day12/main.rb) |  |
 | 13 | [Distress Signal][day13] | [:heavy_check_mark:](solutions/day13/main.rb) |  |
+| 14 | [Regolith Reservoir][day14] | [:heavy_check_mark:](solutions/day14/main.rb) |  |
 
 [day01]: https://adventofcode.com/2022/day/1
 [day02]: https://adventofcode.com/2022/day/2
@@ -32,7 +33,8 @@ I'm using various languages to provide solutions.
 [day11]: https://adventofcode.com/2022/day/11
 [day12]: https://adventofcode.com/2022/day/12
 [day13]: https://adventofcode.com/2022/day/13
+[day14]: https://adventofcode.com/2022/day/14
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-13 07:10:49 +0100
+Readme generated on 2022-12-15 05:39:46 +0100
