@@ -149,6 +149,16 @@
             }
         ]
     },
+    "day16": {
+        "desc": "Proboscidea Volcanium",
+        "path": "solutions/day16",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby", "C++"
     ]
