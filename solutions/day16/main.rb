@@ -11,6 +11,8 @@ DATA = File.read('data.txt').lines
 
 DEBUG = ENV["DEBUG"] ? ENV["DEBUG"].to_i : 0
 
+BY_RATE = DATA.map{ [_1, _2[:rate]] }.sort_by{ -_2 }.map(&:first)
+
 def clone_current c
     {
         minute: c[:minute],
@@ -31,50 +33,82 @@ def search data, minutes: 30, players: 1
     }
     queue = [initial]
     seen = Set.new
+    by_open = {}
     best = initial
     last_minute = 0
+    dropped = 0
+    while last_minute < minutes
+        last_minute += 1
+        puts "Current minute: #{last_minute} (q: #{queue.size})" if DEBUG > 0
+        nqueue = []
+        while queue.any?
+            current = queue.shift
 
-    while queue.any?
-        current = queue.shift
-        dedup = [current[:current].sort, current[:score]]
-        next if seen.include?(dedup)
-        seen << dedup
-        p [best[:score], queue.size, current[:minute]] if DEBUG >= 2
-        if current[:minute] > last_minute and DEBUG > 0
-            puts "Current minute: #{current[:minute]}"
-            last_minute = current[:minute]
-        end
-
-        next if current[:minute] >= minutes
-
-        operations = current[:current].map do |c|
-            todo = []
-            if not current[:open].include?(c) and DATA[c][:rate] > 0
-                todo << "open #{c}"
-            end
-            todo += DATA[c][:dests]
-            todo
-        end.reduce(&:product).reject{ _1 == _2 }
-
-        operations.each do |opers|
-            me, el = opers
-            n = clone_current current
-            n[:minute] += 1
-            [me, el].select(&:itself).each_with_index do |op, i|
-                if op =~ /open/
-                    c = current[:current][i]
-                    n[:open] << c
-                    n[:score] += DATA[c][:rate] * (minutes - n[:minute])
-                    n[:path][i] << c
-                else
-                    next if n[:path][i].last == op
-                    n[:path][i] << op
-                    n[:current][i] = op
+            if players > 1
+                minutes_left = minutes - current[:minute]
+                max_to_score = BY_RATE
+                    .yield_self{ _1 - current[:open].to_a }
+                    .take(players * minutes_left / 2)
+                    .each_slice(players)
+                    .each_with_index
+                    .map do |rates, i|
+                        x = minutes_left - 2 * i
+                        rates.map{ DATA[_1][:rate] * x }.sum
+                    end.sum
+                if max_to_score + current[:score] < best[:score]
+                    dropped += 1
+                    next
                 end
             end
-            queue << n
-            best = n if n[:score] > best[:score]
+
+            # this is potentially unsound
+            s = by_open[current[:open]]
+            if s and s > current[:score]
+                dropped += 1
+                next
+            elsif not s
+                by_open[current[:open]] = current[:score]
+            end
+            # end of unsoundness
+
+            dedup = [current[:current].sort, current[:open]]
+            next if seen.include?(dedup)
+            seen << dedup
+            p [best[:score], queue.size, current[:minute], dropped] if DEBUG >= 2
+            p [current[:current], current[:open], current[:score]] if DEBUG >= 3
+
+            operations = current[:current].map do |c|
+                todo = []
+                if not current[:open].include?(c) and DATA[c][:rate] > 0
+                    todo << "open #{c}"
+                end
+                todo += DATA[c][:dests]
+                todo
+            end.reduce(&:product).reject{ _1 == _2 }
+
+            operations.each do |opers|
+                me, el = opers
+                n = clone_current current
+                n[:minute] += 1
+                nope = false
+                [me, el].select(&:itself).each_with_index do |op, i|
+                    if op =~ /open/
+                        c = current[:current][i]
+                        n[:open] << c
+                        n[:score] += DATA[c][:rate] * (minutes - n[:minute])
+                        n[:path][i] << c
+                    else
+                        nope = true if n[:path][i][-2] == op
+                        n[:path][i] << op
+                        n[:current][i] = op
+                    end
+                end
+                next if nope
+                nqueue << n
+                best = n if n[:score] > best[:score]
+            end
         end
+        queue = nqueue.sort_by{ -_1[:score] }
     end
 
     best
