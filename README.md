@@ -21,6 +21,7 @@ I'm using various languages to provide solutions.
 | 14 | [Regolith Reservoir][day14] | [:heavy_check_mark:](solutions/day14/main.rb) |  |
 | 15 | [Beacon Exclusion Zone][day15] | [:heavy_check_mark:](solutions/day15/main.rb) |  |
 | 16 | [Proboscidea Volcanium][day16] | [:heavy_check_mark:](solutions/day16/main.rb) |  |
+| 17 | [Pyroclastic Flow][day17] | [:heavy_check_mark:](solutions/day17/main.rb) |  |
 
 [day01]: https://adventofcode.com/2022/day/1
 [day02]: https://adventofcode.com/2022/day/2
@@ -38,7 +39,8 @@ I'm using various languages to provide solutions.
 [day14]: https://adventofcode.com/2022/day/14
 [day15]: https://adventofcode.com/2022/day/15
 [day16]: https://adventofcode.com/2022/day/16
+[day17]: https://adventofcode.com/2022/day/17
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-16 07:26:49 +0100
+Readme generated on 2022-12-17 07:30:07 +0100
