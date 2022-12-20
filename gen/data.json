@@ -179,7 +179,16 @@
             }
         ]
     },
-
+    "day20": {
+        "desc": "Grove Positioning System",
+        "path": "solutions/day20",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby", "C++"
     ]
