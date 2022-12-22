@@ -25,6 +25,7 @@ I'm using various languages to provide solutions.
 | 18 | [Boiling Boulders][day18] | [:heavy_check_mark:](solutions/day18/main.rb) |  |
 | 20 | [Grove Positioning System][day20] | [:heavy_check_mark:](solutions/day20/main.rb) |  |
 | 21 | [Monkey Math][day21] | [:heavy_check_mark:](solutions/day21/main.rb) |  |
+| 22 | [Monkey Map][day22] | [:heavy_check_mark:](solutions/day22/main.rb) |  |
 
 [day01]: https://adventofcode.com/2022/day/1
 [day02]: https://adventofcode.com/2022/day/2
@@ -46,7 +47,8 @@ I'm using various languages to provide solutions.
 [day18]: https://adventofcode.com/2022/day/18
 [day20]: https://adventofcode.com/2022/day/20
 [day21]: https://adventofcode.com/2022/day/21
+[day22]: https://adventofcode.com/2022/day/22
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-21 06:36:57 +0100
+Readme generated on 2022-12-22 07:59:09 +0100

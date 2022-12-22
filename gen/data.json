@@ -199,6 +199,16 @@
             }
         ]
     },
+    "day22": {
+        "desc": "Monkey Map",
+        "path": "solutions/day22",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby", "C++"
     ]
