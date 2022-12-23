@@ -7,63 +7,40 @@ ELVES = File.read('data.txt').lines.map{ _1.strip.chars }.each_with_index
     .flatten(1).compact.to_set
 
 def print_elves elves
-    min_x, max_x = elves.map{ _1[0] }.minmax
-    min_y, max_y = elves.map{ _1[1] }.minmax
-    ((min_y-1)..(max_y+1)).each do |y|
-        ((min_x-1)..(max_x+1)).each do |x|
-            print elves.include?([x, y]) ? '#' : '.'
-        end
+    xα, xω = elves.map{ _1[0] }.minmax.then{ [_1 - 1, _2 + 1] }
+    yα, yω = elves.map{ _1[1] }.minmax.then{ [_1 - 1, _2 + 1] }
+    (yα..yω).each do |y|
+        (xα..xω).each{ |x| print elves.include?([x, y]) ? '#' : '.' }
         puts
     end
 end
 
 def add_point a, b
-    [a[0] + b[0], a[1] + b[1]]
+    a.zip(b).map(&:sum)
 end
 
 def around elf
-    [-1, 0, 1].product([-1, 0, 1]).reject{ _1 == [0, 0] }
-        .map{ add_point elf, _1 }
+    [*-1..1].product([*-1..1]).reject{ _1 == [0, 0] }.map{ add_point elf, _1 }
 end
 
 def propose_direction elves, elf, directions
-    directions.each do |dir|
-        case dir
-        when :north
-            empty = [[0, -1], [1, -1], [-1, -1]]
-                .count{ elves.include? add_point(elf, _1) }
-            next unless empty == 0
-            return add_point(elf, [0, -1])
-        when :south
-            empty = [[0, 1], [1, 1], [-1, 1]]
-                .count{ elves.include? add_point(elf, _1) }
-            next unless empty == 0
-            return add_point(elf, [0, 1])
-        when :east
-            empty = [[1, 0], [1, 1], [1, -1]]
-                .count{ elves.include? add_point(elf, _1) }
-            next unless empty == 0
-            return add_point(elf, [1, 0])
-        when :west
-            empty = [[-1, 0], [-1, 1], [-1, -1]]
-                .count{ elves.include? add_point(elf, _1) }
-            next unless empty == 0
-            return add_point(elf, [-1, 0])
-        end
-    end
-    nil
+    dir_points = {
+        north: [[ 0, -1], [ 1, -1], [-1, -1]],
+        south: [[ 0,  1], [ 1,  1], [-1,  1]],
+        east:  [[ 1,  0], [ 1,  1], [ 1, -1]],
+        west:  [[-1,  0], [-1,  1], [-1, -1]],
+    }
+    directions
+        .find{ |d| dir_points[d].none?{ elves.include? add_point(elf, _1) } }
+        .then{ |d| d ? add_point(elf, dir_points[d].first) : nil }
 end
 
 def one_round elves, directions
     new_elves = {}
     loners = []
     elves.each do |elf|
-        if around(elf).count{ elves.include? _1 } == 0
-            loners << elf
-            next
-        end
         new_elf = propose_direction elves, elf, directions
-        if not new_elf
+        if not new_elf or around(elf).count{ elves.include? _1 } == 0
             loners << elf
             next
         end
@@ -74,25 +51,17 @@ def one_round elves, directions
 end
 
 def calc_rectangle elves
-    min_x, max_x = elves.map{ _1[0] }.minmax
-    min_y, max_y = elves.map{ _1[1] }.minmax
-    (min_y..max_y).map do |y|
-        (min_x..max_x).count do |x|
-            not elves.include?([x, y])
-        end
-    end.sum
+    elves.transpose.map{ _1.minmax.inject(:-) - 1 }.inject(:*) - elves.count
 end
 
 def calculate elves
     directions = %i(north south west east)
-    n = 0
     part1 = nil
-    loop do
-        n += 1
+    (1..).each do |n|
         old_elves = elves
         elves = one_round elves, directions
         directions = directions.rotate
-        part1 = calc_rectangle elves if n == 10
+        part1 = calc_rectangle elves.to_a if n == 10
         return part1, n if old_elves == elves
     end
 end
