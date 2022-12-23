@@ -209,6 +209,16 @@
             }
         ]
     },
+    "day23": {
+        "desc": "Unstable Diffusion",
+        "path": "solutions/day23",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby", "C++"
     ]
