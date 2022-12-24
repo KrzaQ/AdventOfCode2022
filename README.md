@@ -27,6 +27,7 @@ I'm using various languages to provide solutions.
 | 21 | [Monkey Math][day21] | [:heavy_check_mark:](solutions/day21/main.rb) |  |
 | 22 | [Monkey Map][day22] | [:heavy_check_mark:](solutions/day22/main.rb) |  |
 | 23 | [Unstable Diffusion][day23] | [:heavy_check_mark:](solutions/day23/main.rb) |  |
+| 24 | [Blizzard Basin][day24] | [:heavy_check_mark:](solutions/day24/main.rb) |  |
 
 [day01]: https://adventofcode.com/2022/day/1
 [day02]: https://adventofcode.com/2022/day/2
@@ -50,7 +51,8 @@ I'm using various languages to provide solutions.
 [day21]: https://adventofcode.com/2022/day/21
 [day22]: https://adventofcode.com/2022/day/22
 [day23]: https://adventofcode.com/2022/day/23
+[day24]: https://adventofcode.com/2022/day/24
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2022-12-23 06:43:21 +0100
+Readme generated on 2022-12-24 06:58:33 +0100
