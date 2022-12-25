@@ -229,6 +229,16 @@
             }
         ]
     },
+    "day25": {
+        "desc": "Full of Hot Air",
+        "path": "solutions/day25",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby", "C++"
     ]
