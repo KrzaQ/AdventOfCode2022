@@ -4,36 +4,19 @@ DATA = File.read('data.txt').lines.map(&:strip)
 
 def from_snafu n
     n.chars.reverse.each_with_index.map do |c, i|
-        n = case c
-        when ?- then -1
-        when ?= then -2
-        else c.to_i
-        end
+        n = c == ?- ? -1 : c == ?= ? -2 : c.to_i
         n * 5**i
     end.sum
 end
 
 def to_snafu n
-    r = []
-    while n > 0
-        r << (n % 5)
-        n /= 5
-    end
-    r << 0
-    for i in 0...r.size
-        if r[i] >= 3
-            r[i] -= 5
-            r[i+1] += 1
-        end
-    end
-    r = r[0...-1] if r.last == 0
-    r.map do |n|
-        case n
-        when -1 then ?-
-        when -2 then ?=
-        else n.to_s
-        end
-    end.join.reverse
+    carry = 0
+    n.to_s(5).chars.reverse.map(&:to_i).then{ _1 + [0] }.map do |n|
+        n += carry
+        carry = n >= 3 ? 1 : 0
+        n -= 5 if n >= 3
+        n == -1 ? ?- : n == -2 ? ?= : n.to_s
+    end.join.reverse.then{ _1[0] == ?0 ? _1[1..-1] : _1 }
 end
 
 PART1 = to_snafu DATA.map { |s| from_snafu s }.sum
